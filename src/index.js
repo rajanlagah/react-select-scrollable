@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './styles.css'
+import Scroller from './Scroller'
 
 export default class ExampleComponent extends Component {
   static propTypes = {
@@ -9,14 +10,8 @@ export default class ExampleComponent extends Component {
   }
 
   render() {
-    const {
-      text
-    } = this.props
-
     return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
+      <Scroller /> 
+    ) 
   }
 }
