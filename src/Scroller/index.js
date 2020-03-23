@@ -14,43 +14,62 @@ export default class Scroller extends Component {
 			isMovingUp:false,
 			isMoving:false,
 			scrollPos:0,
-			scrollTolrence:10,
+			scrollTolrence:20,
 			totalData:[1,2,3,4,5,6],
-			visibleData:2
+			centerElementPossition:0,
+			visibleData:1
 		}
 
 		this.handleScroll = this.handleScroll.bind(this)
 	}
-
 componentDidMount(){
-	// this.setState({visibleData:[1,2,3]})
+	const el = document.getElementById("center_element")
+	if(el){
+		var rect = el.getBoundingClientRect();
+		var elemTop = rect.top;
+		console.log("setting state",elemTop)
+		this.setState({
+			scrollPos:elemTop
+		})
+	}
 }
 
 handleScroll(event) {
 	const { isMovingUp, scrollTolrence,visibleData,isMoving } = {...this.state}
 
-		const { scrollPos } = {...this.state}
-    let scrollTopNew = event.currentTarget.scrollTop ;
-
+		const { scrollPos,enterElementPossition } = {...this.state}
+    	// let  = event.currentTarget.scrollTop ;
+		const el = document.getElementById("center_element")
+		var rect = el.getBoundingClientRect();
+		var scrollTopNew = rect.top;
+		var elemBottom = rect.bottom;
+		console.log(scrollTopNew - scrollPos)
+		console.log(scrollTopNew)
+		console.log(scrollPos)
 		if( Math.abs(scrollTopNew - scrollPos) < scrollTolrence){
+			console.log("under tolrence")
+			console.log(scrollTopNew - scrollPos)
 			this.setState({
 				isMoving:false
 			})
 			return
+		}else{
+			console.log("over tolrence")
+
 		}
 		
-		
+		// if(centerElementPossition){
+		// 	this.setState({
+		// 		centerElementPossition:centerElement
+		// 	})
+		// }
 
-		if ( scrollTopNew > scrollPos){
-			if(!isMovingUp){
+		if ( scrollTopNew < scrollPos){
 				this.setState({visibleData:visibleData + 1})
 				this.setState({isMovingUp:true})
-			}
 		}else{
-			if(isMovingUp){
 				this.setState({visibleData:visibleData-1})
 				this.setState({isMovingUp:false})
-			}
 		}
 		this.setState({
 			scrollPos:scrollTopNew
@@ -68,17 +87,21 @@ handleScroll(event) {
 	render() {
 		let { scrollPos,isMovingUp,visibleData } = {...this.state}
 
-		console.log(this.state)
 		return (
-			<div className={styles.optionsContiner} id='modal' onScroll={this.handleScroll}>
-				<li className={styles.listOfOptions}>
-						<ul><a href='#'>{visibleData-1}</a></ul>
-						<ul><a href='#'>{visibleData}</a></ul>
-						<ul><a href='#'>{visibleData+1}</a></ul>
-						<ul><a href='#'>-</a></ul>
-						<ul><a href='#'>-</a></ul>
+			<div className={styles.outterContiner}>
+				<div className={styles.optionsContiner} id='modal' onScroll={this.handleScroll}>
+					<li className={styles.listOfOptions}>
+							<ul><a href='#'>{1}</a></ul>
+							<ul><a id="center_element" href='#'>2</a></ul>
+							<ul><a href='#'>{3}</a></ul>
+							<ul><a href='#'>4</a></ul>
+							<ul><a href='#'>5</a></ul>
 
-				</li>
+					</li>
+				</div>
+				<div>
+					<span className={styles.selectedElement}> {visibleData}</span>
+				</div>
 			</div>
 		)
 	}

@@ -5,8 +5,26 @@
     font-size: 20px;
     height: 100px;
     overflow: scroll;
-    background-image: linear-gradient(#fff,#eee,#aaa,#eee,#fff);
+    /* background-image: linear-gradient(#fff,#eee,#aaa,#eee,#fff); */
 }
+
+.outterContiner{
+    position: relative;
+}
+
+.selectedElement{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    color: #000;
+    width: 100px;
+    text-align: center;
+    font-size: 1.5em;
+    background-image: linear-gradient(rgba(238, 238, 238, 0.699),#ddd,#ddd,#ddd,rgba(238, 238, 238, 0.514));
+    border: #aaa solid 0px;
+}
+
+
 .listOfOptions, ul, a{
     text-align: center;
     color: black;
@@ -16,15 +34,14 @@
     text-decoration: none;
 }
 
-.listOfOptions ul:nth-child(2){
-    font-size: 1.5em;
-    border: #aaa solid 1px;
-}
+/* .listOfOptions ul:nth-child(2){
+} */
 
 
 .listOfOptions ul:nth-child(1){
     font-size: 1.1em;
     opacity: 0.5;
+    margin-top: 25px;
     transform: rotateX(50deg);
 }
 .listOfOptions ul:nth-child(3){
@@ -36,4 +53,7 @@
     font-size: 0.9em;
     opacity: 0.3;
     transform: rotateX(50deg);
+}
+.listOfOptions ul:last-child{
+    margin-bottom: 50px;
 }

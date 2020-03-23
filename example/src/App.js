@@ -6,7 +6,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <ExampleComponent data={[1,2,3,4,5,6,7]}  scrollTolrence={19}/>
       </div>
     )
   }
