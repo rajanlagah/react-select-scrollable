@@ -14,7 +14,7 @@ export default class Scroller extends Component {
 			isMovingUp:false,
 			isMoving:false,
 			scrollPos:0,
-			scrollTolrence:20,
+			scrollTolrence:0,
 			totalData:[1,2,3,4,5,6],
 			centerElementPossition:0,
 			visibleData:1
@@ -23,21 +23,22 @@ export default class Scroller extends Component {
 		this.handleScroll = this.handleScroll.bind(this)
 	}
 componentDidMount(){
+	const {scrollTolrence} = {...this.props}
 	const el = document.getElementById("center_element")
 	if(el){
 		var rect = el.getBoundingClientRect();
 		var elemTop = rect.top;
 		console.log("setting state",elemTop)
 		this.setState({
-			scrollPos:elemTop
+			scrollPos:elemTop,
+			scrollTolrence:scrollTolrence
 		})
 	}
 }
 
 handleScroll(event) {
-	const { isMovingUp, scrollTolrence,visibleData,isMoving } = {...this.state}
-
-		const { scrollPos,enterElementPossition } = {...this.state}
+	const { scrollPos, scrollTolrence,visibleData } = {...this.state}
+		const {onSelectedDataChange} = {...this.props }
     	// let  = event.currentTarget.scrollTop ;
 		const el = document.getElementById("center_element")
 		var rect = el.getBoundingClientRect();
@@ -46,7 +47,10 @@ handleScroll(event) {
 		console.log(scrollTopNew - scrollPos)
 		console.log(scrollTopNew)
 		console.log(scrollPos)
-		if( Math.abs(scrollTopNew - scrollPos) < scrollTolrence){
+		if(scrollTopNew>0 && scrollPos<0 && (scrollPos - scrollTopNew) > scrollTolrence){
+			console.log("over tolrence")
+		}
+		else if( Math.abs(scrollTopNew - scrollPos) < scrollTolrence){
 			console.log("under tolrence")
 			console.log(scrollTopNew - scrollPos)
 			this.setState({
@@ -65,9 +69,11 @@ handleScroll(event) {
 		// }
 
 		if ( scrollTopNew < scrollPos){
+				onSelectedDataChange(visibleData + 1)
 				this.setState({visibleData:visibleData + 1})
 				this.setState({isMovingUp:true})
 		}else{
+				onSelectedDataChange(visibleData - 1)
 				this.setState({visibleData:visibleData-1})
 				this.setState({isMovingUp:false})
 		}
@@ -86,16 +92,13 @@ handleScroll(event) {
 
 	render() {
 		let { scrollPos,isMovingUp,visibleData } = {...this.state}
+		const { data } = {...this.props}
 
 		return (
 			<div className={styles.outterContiner}>
 				<div className={styles.optionsContiner} id='modal' onScroll={this.handleScroll}>
 					<li className={styles.listOfOptions}>
-							<ul><a href='#'>{1}</a></ul>
-							<ul><a id="center_element" href='#'>2</a></ul>
-							<ul><a href='#'>{3}</a></ul>
-							<ul><a href='#'>4</a></ul>
-							<ul><a href='#'>5</a></ul>
+							{data && data.map((item,index)=><ul><a id={index == 1?"center_element":""} href='#'>{item}</a></ul>)}
 
 					</li>
 				</div>

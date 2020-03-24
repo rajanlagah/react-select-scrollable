@@ -39,18 +39,15 @@
 
 
 .listOfOptions ul:nth-child(1){
+    margin-top: 25px;
+}
+.listOfOptions ul{
     font-size: 1.1em;
     opacity: 0.5;
-    margin-top: 25px;
     transform: rotateX(50deg);
 }
-.listOfOptions ul:nth-child(3){
+.listOfOptions ul{
     font-size: 1.1em;
-    opacity: 0.5;
-    transform: rotateX(40deg);
-}
-.listOfOptions ul:nth-child(n+4){
-    font-size: 0.9em;
     opacity: 0.3;
     transform: rotateX(50deg);
 }
