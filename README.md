@@ -53,3 +53,10 @@ export default class App extends Component {
 
 MIT © [rajanlagah](https://github.com/rajanlagah)
 # react-select-scrollable
+
+
+## Todo 
+- Make tolerance bit more accurate.
+- Default value option 
+- remove scroll-bar option 
+- show cancel button at bottom 
