@@ -6,10 +6,10 @@ import Scroller from './Scroller'
 export default class ExampleComponent extends Component {
 
   render() {
-    const { data, scrollTolrence } = {...this.props}
+    const {data ,scrollTolrence ,onSelectedDataChange } = {...this.props}
 
     return (
-      <Scroller data={data} scrollTolrence={scrollTolrence} onSelectedDataChange={ data => console.log('changed data'+data)} /> 
+      <Scroller data={data} scrollTolrence={scrollTolrence} onSelectedDataChange={ data => onSelectedDataChange(data)} /> 
     ) 
   }
 }
