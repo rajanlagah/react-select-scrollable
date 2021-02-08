@@ -37,7 +37,7 @@ export default class App extends Component {
       <div>
         <ExampleComponent data={[1,2,3,4,5,6,7,8,9,10,11,12]}  
         onSelectedDataChange={(data)=> this.setState({selectedNumber:data})} 
-        scrollTolrence={24}/>
+        />
         <div>
           { !selectedNumber && <h1>You have not selected any number yet</h1>}
           { selectedNumber && <h1>You have selected { selectedNumber}</h1>}
@@ -56,7 +56,8 @@ MIT © [rajanlagah](https://github.com/rajanlagah)
 
 
 ## Todo 
-- Make tolerance bit more accurate.
+- [x] Make tolerance bit more accurate.
 - Default value option 
 - remove scroll-bar option 
 - show cancel button at bottom 
+- mobile preview 
