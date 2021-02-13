@@ -17,7 +17,12 @@ export default class App extends Component {
 
     return (
       <div>
-        <ExampleComponent data={[1,2,3,4,5,6,7,8,9,10,11,12]}  onSelectedDataChange={(data)=> this.setState({selectedNumber:data})}/>
+        <ExampleComponent data={[
+          {value:'1',displayName:"One"},
+          {value:'2',displayName:"Two"},
+          {value:'3',displayName:"Three"},
+          {value:'4',displayName:"Four"},
+          ]}  onSelectedDataChange={(data)=> this.setState({selectedNumber:data})}/>
         <div>
           { !selectedNumber && <h1>You have not selected any number yet</h1>}
           { selectedNumber && <h1>You have selected { selectedNumber}</h1>}
