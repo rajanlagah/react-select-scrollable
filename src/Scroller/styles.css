@@ -1,19 +1,53 @@
+.inputModal{
+    height: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(206, 83, 83, 0.748);
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    
+    align-items: flex-end;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.modalCloseButton{
+    /* width: calc(100% - 20px); */
+    /* margin: 5px 0 0 0; */
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-size: 20px;
+}
+
 .optionsContiner{
     margin: 0;
-    width: 100px;
+    padding: 0;
+    width: 100%;
     list-style-type: none;
     font-size: 20px;
-    height: 100px;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
     overflow: scroll;
-    /* background-image: linear-gradient(#fff,#eee,#aaa,#eee,#fff); */
+    margin-bottom:-10px
 }
 
-.outterContiner{
-    position: relative;
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
-
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
 .selectedElement{
-    position: absolute;
+    position: static;
     top: 25px;
     left: 0;
     color: #000;
@@ -24,22 +58,42 @@
     border: #aaa solid 0px;
 }
 
-
-.listOfOptions, ul, a{
+.listOfOptions{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+}
+.listOfOptions, a{
     text-align: center;
+    background-color: #fff;
+    border: 1px solid #eee;
     color: black;
-    margin: 1px auto;
-    padding: 0;
+    padding: 5px 0;
+    /* border-radius: 10px; */
+    width: 100%;
     font-weight: bold;
+    overflow: hidden; /* Hide scrollbars */
     text-decoration: none;
 }
 
-/* .listOfOptions ul:nth-child(2){
+
+/* .listOfOptions, ul, a{
+    text-align: center;
+    color: black;
+    margin: 1px auto;
+    height: 100%;
+    padding: 0;
+    font-weight: bold;
+    text-decoration: none;
 } */
 
 
 .listOfOptions ul:nth-child(1){
-    margin-top: 25px;
+    /* margin-top: 25px; */
 }
 .listOfOptions ul{
     font-size: 1.1em;
@@ -54,3 +108,4 @@
 .listOfOptions ul:last-child{
     margin-bottom: 50px;
 }
+
