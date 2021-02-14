@@ -81,17 +81,6 @@
 }
 
 
-/* .listOfOptions, ul, a{
-    text-align: center;
-    color: black;
-    margin: 1px auto;
-    height: 100%;
-    padding: 0;
-    font-weight: bold;
-    text-decoration: none;
-} */
-
-
 .listOfOptions ul:nth-child(1){
     /* margin-top: 25px; */
 }

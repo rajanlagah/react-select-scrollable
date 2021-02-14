@@ -58,8 +58,8 @@ MIT © [rajanlagah](https://github.com/rajanlagah)
 ## Todo 
 - [x] Make tolerance bit more accurate.
 - [ ] Default value option 
-- [ ] Move to hooks 
-- [ ] UI fixes 
+- [x] Add functional component 
+- [ ] Select Tag UI 
 - [x] remove scroll-bar option 
 - [x] show cancel button at bottom 
 - [ ] mobile preview 

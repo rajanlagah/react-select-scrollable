@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import PropTypes from 'prop-types'
 
-import Scroller from './Scroller'
+import Scroller from './container/Scroller'
 
 function ExampleComponent({ data, scrollTolrence, onSelectedDataChange }) {
 
