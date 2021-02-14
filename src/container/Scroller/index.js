@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import SimpleModal from '../../component/Modal'
-import SelectTagSimple from '../../component/SelectTag'
+import {SelectTag} from '../../component/SelectTag'
 // import PropTypes from 'prop-types'
 
 
@@ -22,7 +22,8 @@ export default class Scroller extends Component {
 			visibleData: 1,
 			centerData: 20,
 			closeModal: true,
-			isMobileView: false
+			isMobileView: false,
+			showOptions:false
 		}
 
 		this.handleItemClick = this.handleItemClick.bind(this)
@@ -40,9 +41,21 @@ export default class Scroller extends Component {
 
 	handleSelectClick() {
 		const { isMobileView } = { ...this.state }
+		const optionContainer = document.getElementById('optionsContainer')
+
+		console.log("optionContainer",optionContainer)
 		this.setState({
 			closeModal: !isMobileView
 		})
+		if(!isMobileView){
+			this.setState({
+				showOptions:true
+			})
+		}else{
+			this.setState({
+				showOptions:false
+			})
+		}
 	}
 
 	handleChange(e) {
@@ -71,10 +84,11 @@ export default class Scroller extends Component {
 
 	render() {
 		const { data } = { ...this.props }
-		const { closeModal, visibleData, isMobile } = { ...this.state }
+		const { closeModal, visibleData, isMobile,showOptions } = { ...this.state }
 
 		if (closeModal) {
-			return <SelectTagSimple
+			return <SelectTag
+				showOptions={showOptions}
 				visibleData={visibleData}
 				handleChange={this.handleChange}
 				handleSelectClick={this.handleSelectClick}

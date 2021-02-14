@@ -22,6 +22,9 @@ export default class App extends Component {
           {value:'2',displayName:"Two"},
           {value:'3',displayName:"Three"},
           {value:'4',displayName:"Four"},
+          {value:'5',displayName:"Five"},
+          {value:'6',displayName:"Six"},
+          {value:'7',displayName:"Seven"},
           ]}  onSelectedDataChange={(data)=> this.setState({selectedNumber:data})}/>
         <div>
           { !selectedNumber && <h1>You have not selected any number yet</h1>}
