@@ -22,58 +22,11 @@ export default class Scroller extends Component {
 			closeModal: true
 		}
 
-		this.handleScroll = this.handleScroll.bind(this)
 		this.handleItemClick = this.handleItemClick.bind(this)
 		this.toggleModal = this.toggleModal.bind(this)
 	}
-	componentDidMount() {
-		const { scrollTolrence } = { ...this.props }
-		const el = document.getElementById("center_element")
-		if (el) {
-			var rect = el.getBoundingClientRect();
-			var elemTop = rect.top;
-			this.setState({
-				scrollPos: elemTop,
-				scrollTolrence: scrollTolrence
-			})
-		}
-	}
-
-	// getClosestElementToCenter = (centerData) => {
-	// 	let closestDiff = Math.pow(2, 10)
-	// 	let closestNode = null
-
-	// 	const elements = document.querySelectorAll('.elemets')
-	// 	const centerElement = document.getElementById('center-element-display')
-
-	// 	// console.log(elements[0].getBoundingClientRect())
-
-	// 	elements.forEach(element => {
-	// 		const diff = Math.abs(element.getBoundingClientRect().y - centerData)
-	// 		if (diff < closestDiff) {
-	// 			closestNode = element
-	// 		}
-	// 	});
-
-	// 	return closestNode
-	// }
-
-	handleScroll() {
-		return
-
-		// const { visibleData, centerData } = { ...this.state }
-		// const { onSelectedDataChange } = this.props
-
-		// const nodeAtCenter = this.getClosestElementToCenter(centerData)
-		// const intersectValue = nodeAtCenter.getAttribute("value")
-		// if (visibleData != intersectValue) {
-		// 	onSelectedDataChange(intersectValue)
-		// }
-		// this.setState({
-		// 	visibleData: intersectValue
-		// })
-	}
-
+	
+	
 	handleItemClick(e) {
 		const { onSelectedDataChange } = this.props
 

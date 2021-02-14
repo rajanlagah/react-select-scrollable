@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 
 import Scroller from './Scroller'
 
-export default class ExampleComponent extends Component {
+function ExampleComponent({ data, scrollTolrence, onSelectedDataChange }) {
 
-  render() {
-    const {data ,scrollTolrence ,onSelectedDataChange } = {...this.props}
 
-    return (
-      <Scroller data={data} scrollTolrence={scrollTolrence} onSelectedDataChange={ data => onSelectedDataChange(data)} /> 
-    ) 
-  }
+  return (
+    <Scroller data={data} scrollTolrence={scrollTolrence} onSelectedDataChange={data => onSelectedDataChange(data)} />
+  )
 }
+
+
+export default ExampleComponent
