@@ -27,6 +27,8 @@ export default class App extends Component {
           { value: '7', displayName: "Seven" },
         ]}
           heading="Choose"
+          classNameForModal="modal"
+          classNameForSelectTag="selectTag"
           mobileViewThreshold={450}
           onSelectedDataChange={(data) => this.setState({ selectedNumber: data })} />
         <div>

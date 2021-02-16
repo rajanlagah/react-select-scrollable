@@ -68,6 +68,8 @@ export default class App extends Component {
 | heading              	| string   	| Text will appear as select tag heading                                                           	|
 | mobileViewThreshold  	| number   	| will open modal when screen size is less than <br>`mobileViewThreshold` else simple select tag   	|
 | onSelectedDataChange 	| function 	| Callback function that will run when user select <br>from option                                 	|
+| classNameForModal 	  | string 	  | Custom class for Modal component                                 	                                |
+| classNameForSelectTag | string 	  | Custom class for Select component                                 	                              |
 
 ## License
 
@@ -87,3 +89,4 @@ MIT © [rajanlagah](https://github.com/rajanlagah)
 - [ ] Testing 
 - [x] GIF update
 - [x] README.md update
+- [x] Custom class names for component

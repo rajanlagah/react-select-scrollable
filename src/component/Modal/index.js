@@ -2,9 +2,9 @@ import React from 'react'
 
 import styles from './styles.css'
 
-const SimpleModal = ({ visibleData, handleItemClick, setModelClose, data }) => (
+const SimpleModal = ({ visibleData, classNameForModal,handleItemClick, setModelClose, data }) => (
 
-    <div>
+    <div className={classNameForModal}>
         <select value={visibleData} disabled />
         <div>
             <div className={`${styles.inputModal}  ${styles.outterContiner}`}>

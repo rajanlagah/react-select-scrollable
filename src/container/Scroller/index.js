@@ -99,11 +99,12 @@ export default class Scroller extends Component {
 	}
 
 	render() {
-		const { data,heading } = { ...this.props }
+		const { data,heading,classNameForModal,classNameForSelectTag } = { ...this.props }
 		const { closeModal, visibleData, isMobile, showOptions } = { ...this.state }
 		console.log(this.state)
 		if (closeModal) {
 			return <SelectTag
+				classNameForSelectTag={classNameForSelectTag}
 				heading={heading}
 				showOptions={showOptions}
 				visibleData={visibleData}
@@ -115,6 +116,7 @@ export default class Scroller extends Component {
 		}
 
 		return <SimpleModal
+			classNameForModal={classNameForModal}
 			visibleData={visibleData}
 			handleItemClick={this.handleItemClick}
 			setModelClose={this.setModelClose}

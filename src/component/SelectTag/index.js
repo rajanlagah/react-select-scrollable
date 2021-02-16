@@ -3,8 +3,8 @@ import React from 'react'
 import styles from './styles.css'
 import '../../assets/arrow-down.svg'
 
-export const SelectTagSimple = ({ visibleData, handleChange, handleSelectClick, data }) => (
-    <div className={styles.customSelect}>
+export const SelectTagSimple = ({ visibleData, handleChange, classNameForSelectTag,handleSelectClick, data }) => (
+    <div className={`${styles.customSelect} ${classNameForSelectTag}`}>
         <select value={visibleData} onChange={handleChange} onClick={() => handleSelectClick()}>
             {data && data.map((item, index) => <option value={item.value}>{item.displayName}</option>)}
         </select>
@@ -12,8 +12,8 @@ export const SelectTagSimple = ({ visibleData, handleChange, handleSelectClick, 
 )
 
 
-export const SelectTag = ({ showOptions, heading,visibleData, setItemSelect,handleChange, handleSelectClick, data }) => (
-    <div className={styles.selectBox} onClick={() => handleSelectClick()}>
+export const SelectTag = ({ classNameForSelectTag,showOptions, heading,visibleData, setItemSelect,handleChange, handleSelectClick, data }) => (
+    <div className={`${styles.selectBox} ${classNameForSelectTag}`} onClick={() => handleSelectClick()}>
             {showOptions &&
             <div className={styles.optionsContainer} id="optionContainer">
                 {data && data.map((item, index) =>
