@@ -19,7 +19,7 @@ export default class Scroller extends Component {
 			scrollTolrence: 0,
 			totalData: [1, 2, 3, 4, 5, 6],
 			centerElementPossition: 0,
-			visibleData: 1,
+			visibleData: null,
 			centerData: 20,
 			closeModal: true,
 			isMobileView: false,
@@ -29,6 +29,7 @@ export default class Scroller extends Component {
 		this.handleItemClick = this.handleItemClick.bind(this)
 		this.setModelClose = this.setModelClose.bind(this)
 		this.handleChange = this.handleChange.bind(this)
+		this.setItemSelect = this.setItemSelect.bind(this)
 		this.handleSelectClick = this.handleSelectClick.bind(this)
 	}
 
@@ -40,9 +41,11 @@ export default class Scroller extends Component {
 	}
 
 	handleSelectClick() {
-		const { isMobileView } = { ...this.state }
+		const { isMobileView,showOptions } = { ...this.state }
 		const optionContainer = document.getElementById('optionsContainer')
-
+		if(showOptions){
+			return
+		}
 		console.log("optionContainer",optionContainer)
 		this.setState({
 			closeModal: !isMobileView
@@ -65,6 +68,17 @@ export default class Scroller extends Component {
 		})
 	}
 
+	setItemSelect(item) {
+		const { onSelectedDataChange } = this.props
+
+		this.setState({
+			visibleData: item,
+			closeModal: true,
+			showOptions:false
+		})
+		onSelectedDataChange(item)
+	}
+	
 	handleItemClick(e) {
 		const { onSelectedDataChange } = this.props
 		const selectedValue = e.target.getAttribute('value')
@@ -85,11 +99,12 @@ export default class Scroller extends Component {
 	render() {
 		const { data } = { ...this.props }
 		const { closeModal, visibleData, isMobile,showOptions } = { ...this.state }
-
+		console.log(this.state)
 		if (closeModal) {
 			return <SelectTag
 				showOptions={showOptions}
 				visibleData={visibleData}
+				setItemSelect={this.setItemSelect}
 				handleChange={this.handleChange}
 				handleSelectClick={this.handleSelectClick}
 				data={data}

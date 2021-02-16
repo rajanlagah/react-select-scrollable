@@ -26,8 +26,7 @@ export default {
     external(),
     postcss({
       
-      modules: false,
-      sourcemap: false,
+      modules: true,
     }),
     url(),
     svgr(),

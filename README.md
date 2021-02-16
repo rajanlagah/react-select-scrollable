@@ -60,7 +60,7 @@ MIT © [rajanlagah](https://github.com/rajanlagah)
 - [ ] Dynamic Threshold for mobile view.
 - [ ] Default value option 
 - [x] Add functional component 
-- [ ] Select Tag UI 
+- [x] Select Tag UI 
 - [x] remove scroll-bar option 
 - [x] show cancel button at bottom 
 - [ ] mobile preview gif

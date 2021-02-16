@@ -12,12 +12,12 @@ export const SelectTagSimple = ({ visibleData, handleChange, handleSelectClick, 
 )
 
 
-export const SelectTag = ({ showOptions, visibleData, handleChange, handleSelectClick, data }) => (
+export const SelectTag = ({ showOptions, visibleData, setItemSelect,handleChange, handleSelectClick, data }) => (
     <div className={styles.selectBox} onClick={() => handleSelectClick()}>
-        {showOptions &&
+            {showOptions &&
             <div className={styles.optionsContainer} id="optionContainer">
                 {data && data.map((item, index) =>
-                    <div className={styles.option}>
+                    <div className={styles.option} onClick={()=>setItemSelect(item.value)}>
                         <input
                             type="radio"
                             className={styles.radio}
@@ -30,7 +30,7 @@ export const SelectTag = ({ showOptions, visibleData, handleChange, handleSelect
             </div>
         }
         <div className={styles.selectedBox}>
-            Choose
+            {visibleData?visibleData:"Choose"}
         </div>
     </div>
 )
