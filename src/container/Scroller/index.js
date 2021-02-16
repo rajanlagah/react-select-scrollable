@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import SimpleModal from '../../component/Modal'
-import {SelectTag} from '../../component/SelectTag'
+import { SelectTag } from '../../component/SelectTag'
 // import PropTypes from 'prop-types'
 
 
@@ -23,7 +23,7 @@ export default class Scroller extends Component {
 			centerData: 20,
 			closeModal: true,
 			isMobileView: false,
-			showOptions:false
+			showOptions: false
 		}
 
 		this.handleItemClick = this.handleItemClick.bind(this)
@@ -34,29 +34,31 @@ export default class Scroller extends Component {
 	}
 
 	componentDidMount() {
-		const isMobile = window.innerWidth < 500
+		const { mobileViewThreshold } = this.props
+
+		const isMobile = window.innerWidth < mobileViewThreshold
 		this.setState({
 			isMobileView: isMobile
 		})
 	}
 
 	handleSelectClick() {
-		const { isMobileView,showOptions } = { ...this.state }
+		const { isMobileView, showOptions } = { ...this.state }
 		const optionContainer = document.getElementById('optionsContainer')
-		if(showOptions){
+		if (showOptions) {
 			return
 		}
-		console.log("optionContainer",optionContainer)
+		console.log("optionContainer", optionContainer)
 		this.setState({
 			closeModal: !isMobileView
 		})
-		if(!isMobileView){
+		if (!isMobileView) {
 			this.setState({
-				showOptions:true
+				showOptions: true
 			})
-		}else{
+		} else {
 			this.setState({
-				showOptions:false
+				showOptions: false
 			})
 		}
 	}
@@ -74,11 +76,11 @@ export default class Scroller extends Component {
 		this.setState({
 			visibleData: item,
 			closeModal: true,
-			showOptions:false
+			showOptions: false
 		})
 		onSelectedDataChange(item)
 	}
-	
+
 	handleItemClick(e) {
 		const { onSelectedDataChange } = this.props
 		const selectedValue = e.target.getAttribute('value')
@@ -97,11 +99,12 @@ export default class Scroller extends Component {
 	}
 
 	render() {
-		const { data } = { ...this.props }
-		const { closeModal, visibleData, isMobile,showOptions } = { ...this.state }
+		const { data,heading } = { ...this.props }
+		const { closeModal, visibleData, isMobile, showOptions } = { ...this.state }
 		console.log(this.state)
 		if (closeModal) {
 			return <SelectTag
+				heading={heading}
 				showOptions={showOptions}
 				visibleData={visibleData}
 				setItemSelect={this.setItemSelect}

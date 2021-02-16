@@ -3,11 +3,16 @@ import React from 'react'
 
 import Scroller from './container/Scroller'
 
-function ExampleComponent({ data, scrollTolrence, onSelectedDataChange }) {
+function ExampleComponent({ 
+  data=[], 
+  mobileViewThreshold=450, 
+  heading="Choose",
+  onSelectedDataChange=()=>undefined,
+ }) {
 
 
   return (
-    <Scroller data={data} scrollTolrence={scrollTolrence} onSelectedDataChange={data => onSelectedDataChange(data)} />
+    <Scroller heading={heading} data={data} mobileViewThreshold={mobileViewThreshold} onSelectedDataChange={data => onSelectedDataChange(data)} />
   )
 }
 

@@ -57,11 +57,12 @@ MIT © [rajanlagah](https://github.com/rajanlagah)
 
 ## Todo 
 - [x] Make tolerance bit more accurate.
-- [ ] Dynamic Threshold for mobile view.
-- [ ] Default value option 
+- [x] Dynamic Threshold for mobile view.
+- [x] Select tag heading 
 - [x] Add functional component 
 - [x] Select Tag UI 
 - [x] remove scroll-bar option 
 - [x] show cancel button at bottom 
 - [ ] mobile preview gif
 - [ ] Testing 
+- [ ] GIF update

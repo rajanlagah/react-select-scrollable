@@ -12,7 +12,7 @@ export const SelectTagSimple = ({ visibleData, handleChange, handleSelectClick, 
 )
 
 
-export const SelectTag = ({ showOptions, visibleData, setItemSelect,handleChange, handleSelectClick, data }) => (
+export const SelectTag = ({ showOptions, heading,visibleData, setItemSelect,handleChange, handleSelectClick, data }) => (
     <div className={styles.selectBox} onClick={() => handleSelectClick()}>
             {showOptions &&
             <div className={styles.optionsContainer} id="optionContainer">
@@ -30,7 +30,7 @@ export const SelectTag = ({ showOptions, visibleData, setItemSelect,handleChange
             </div>
         }
         <div className={styles.selectedBox}>
-            {visibleData?visibleData:"Choose"}
+            {visibleData?visibleData:heading}
         </div>
     </div>
 )
