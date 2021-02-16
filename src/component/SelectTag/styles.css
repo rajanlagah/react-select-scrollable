@@ -1,6 +1,7 @@
 .selectBox{
     display: flex;
-    width: 400px;   
+    width: 90%;
+    padding: 20px;   
     flex-direction: column;
     order: 0;
 }
