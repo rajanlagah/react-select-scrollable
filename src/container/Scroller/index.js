@@ -116,6 +116,7 @@ export default class Scroller extends Component {
 		}
 
 		return <SimpleModal
+			heading={heading}
 			classNameForModal={classNameForModal}
 			visibleData={visibleData}
 			handleItemClick={this.handleItemClick}

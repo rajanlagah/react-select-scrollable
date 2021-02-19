@@ -1,11 +1,12 @@
 import React from 'react'
+import { SelectTag } from '../SelectTag'
 
 import styles from './styles.css'
 
-const SimpleModal = ({ visibleData, classNameForModal,handleItemClick, setModelClose, data }) => (
+const SimpleModal = ({ visibleData, heading, classNameForModal, handleItemClick, setModelClose, data }) => (
 
     <div className={classNameForModal}>
-        <select value={visibleData} disabled />
+        <SelectTag data={data} heading={heading} />
         <div>
             <div className={`${styles.inputModal}  ${styles.outterContiner}`}>
                 <div className={styles.optionsContiner} id='modal' >

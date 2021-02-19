@@ -90,3 +90,5 @@ MIT © [rajanlagah](https://github.com/rajanlagah)
 - [x] GIF update
 - [x] README.md update
 - [x] Custom class names for component
+- [x] Dont remove select tag when modal open
+- [x] Do some animation when modal open
