@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectTag } from "../SelectTag";
+import { SelectTag } from "../SelectTag/index.jsx";
 
 import styles from "./styles.css";
 

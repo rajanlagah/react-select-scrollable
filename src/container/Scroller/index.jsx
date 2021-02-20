@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SimpleModal from "../../component/Modal";
-import { SelectTag } from "../../component/SelectTag";
+import SimpleModal from "../../component/Modal/index.jsx";
+import { SelectTag } from "../../component/SelectTag/index.jsx";
 // import PropTypes from 'prop-types'
 
 export default class Scroller extends Component {

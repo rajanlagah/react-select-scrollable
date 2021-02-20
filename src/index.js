@@ -1,7 +1,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-import Scroller from './container/Scroller'
+import Scroller from './container/Scroller/index.jsx'
 
 function ExampleComponent({
   data = [],
