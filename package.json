@@ -1,6 +1,6 @@
 {
   "name": "react-select-scrollable",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Suitcase lock like digit selection ",
   "author": "rajanlagah",
   "license": "MIT",
@@ -11,7 +11,18 @@
   "engines": {
     "node": ">=8",
     "npm": ">=5"
-  },
+  },  
+  "keywords": [
+		"npm",
+		"react",
+		"js",
+		"javascript",
+		"smart select tag",
+		"apple UI",
+		"package",
+		"pkg",
+		"module"
+	],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",

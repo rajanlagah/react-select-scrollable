@@ -17,9 +17,9 @@ function ExampleComponent({
     <Scroller
       classNameForModal={classNameForModal}
       classNameForSelectTag={classNameForSelectTag}
-      heading={heading} 
-      data={data} 
-      mobileViewThreshold={mobileViewThreshold} 
+      heading={heading}
+      data={data}
+      mobileViewThreshold={mobileViewThreshold}
       onSelectedDataChange={data => onSelectedDataChange(data)} />
   )
 }
